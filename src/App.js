@@ -1,17 +1,17 @@
 import { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
-import Us from './components/Us';
+// import Us from './components/Us';
 import Textfrom from './components/Textfrom';
 import Alert from './components/Alert';
-import {BrowserRouter as Router} from "react-router-dom"
-import {
-  // createBrowserRouter,
-  // RouterProvider,
-  Route,
-  // Link,
-  Routes,
-} from "react-router-dom";
+// import {BrowserRouter as Router} from "react-router-dom"
+// import {
+//   // createBrowserRouter,
+//   // RouterProvider,
+//   Route,
+//   // Link,
+//   Routes,
+// } from "react-router-dom";
 
 
 function App() {
@@ -47,17 +47,11 @@ function App() {
 
   return (
     <>
-    <Router>
    <Navbar title="Textutils" aboutText="About textUtils" mode={mode} toggleMode={toggleMode} />
    <Alert alert={alert}/>
    <div className="container my-3">
-    <Routes>
-    <Route exact path="/Us" element={<Us/>} />
-    <Route exact path="/" element={<Textfrom showAlert={showAlert} heading="Enter your text below" mode={mode}/>} />
-    </Routes>
+   <Textfrom showAlert={showAlert} heading="Enter your text below" mode={mode}/>
    </div>
-   </Router>
-  
   </>
   );
 }
